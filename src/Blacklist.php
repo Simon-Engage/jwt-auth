@@ -25,7 +25,7 @@ class Blacklist
      *
      * @var int
      */
-    protected $refreshTTL = 20160;
+    protected $refreshTTL = 20161;
 
     /**
      * @param \Tymon\JWTAuth\Providers\Storage\StorageInterface  $storage
