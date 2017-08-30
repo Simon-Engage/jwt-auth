@@ -1,17 +1,8 @@
 <?php
 
-/*
- * This file is part of jwt-auth.
- *
- * (c) Sean Tymon <tymon148@gmail.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
+namespace Tymon\JWTAuth\Contracts\Providers;
 
-namespace Tymon\JWTAuth\Providers\Storage;
-
-interface StorageInterface
+interface Storage
 {
     /**
      * @param string $key
@@ -22,9 +13,17 @@ interface StorageInterface
 
     /**
      * @param string $key
-     * @return bool
+     * @param mixed $value
+     *
+     * @return void
      */
-    public function has($key);
+    public function forever($key, $value);
+
+    /**
+     * @param string $key
+     * @return mixed
+     */
+    public function get($key);
 
     /**
      * @param string $key

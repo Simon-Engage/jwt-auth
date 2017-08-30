@@ -12,14 +12,14 @@
 namespace Tymon\JWTAuth\Test\Providers\Storage;
 
 use Mockery;
-use Tymon\JWTAuth\Providers\Storage\IlluminateCacheAdapter;
+use Tymon\JWTAuth\Providers\Storage\Illuminate;
 
 class IlluminateCacheAdapterTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
         $this->cache = Mockery::mock('Illuminate\Cache\CacheManager');
-        $this->storage = new IlluminateCacheAdapter($this->cache);
+        $this->storage = new Illuminate($this->cache);
 
         $this->cache->shouldReceive('tags')->andReturn(Mockery::self());
     }

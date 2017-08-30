@@ -28,7 +28,7 @@ class BlacklistTest extends \PHPUnit_Framework_TestCase
     {
         Carbon::setTestNow(Carbon::createFromTimeStampUTC(123));
 
-        $this->storage = Mockery::mock('Tymon\JWTAuth\Providers\Storage\StorageInterface');
+        $this->storage = Mockery::mock('Tymon\JWTAuth\Providers\Storage\Storage');
         $this->blacklist = new Blacklist($this->storage);
         $this->blacklist->setRefreshTTL(20160);
 
